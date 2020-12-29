@@ -1,8 +1,8 @@
 export interface IStudent {
   id: number;
   name: string;
-  address: string;
   age: number;
+  address: string;
   mark: number;
   avatar: string;
 }
