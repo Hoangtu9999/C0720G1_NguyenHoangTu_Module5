@@ -1,0 +1,28 @@
+{
+  "studentList": [
+    {
+      "id": "1",
+      "name": "Hoàng Tứ",
+      "age": "21",
+      "address": "Quảng nam",
+      "mark": "8",
+      "avatar": "https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.0-9/131410793_1107915046307945_7994980708310791805_n.jpg?_nc_cat=102&ccb=2&_nc_sid=09cbfe&_nc_ohc=KdcRsKZZ_nEAX_V9-yB&_nc_ht=scontent.fsgn2-5.fna&oh=6a4d6d3c6222c970b0b73f9bc84f6f4b&oe=6010A22D"
+    },
+    {
+      "id": "2",
+      "name": "Hoàng Tứ 1",
+      "age": "21",
+      "address": "Quảng nam",
+      "mark": "8",
+      "avatar": "https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.0-9/131410793_1107915046307945_7994980708310791805_n.jpg?_nc_cat=102&ccb=2&_nc_sid=09cbfe&_nc_ohc=KdcRsKZZ_nEAX_V9-yB&_nc_ht=scontent.fsgn2-5.fna&oh=6a4d6d3c6222c970b0b73f9bc84f6f4b&oe=6010A22D"
+    },
+    {
+      "id": "3",
+      "name": "Hoàng Tứ 2",
+      "age": "21",
+      "address": "Quảng nam",
+      "mark": "4",
+      "avatar": "https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.0-9/131410793_1107915046307945_7994980708310791805_n.jpg?_nc_cat=102&ccb=2&_nc_sid=09cbfe&_nc_ohc=KdcRsKZZ_nEAX_V9-yB&_nc_ht=scontent.fsgn2-5.fna&oh=6a4d6d3c6222c970b0b73f9bc84f6f4b&oe=6010A22D"
+    }
+  ]
+}

@@ -14,4 +14,7 @@ export class StudentDetailComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getAge(value: any) {
+    this.student.age = value;
+  }
 }

@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div *ngIf="student" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -17,6 +17,7 @@
           <div class="form-group">
             <label for="exampleInputPassword2">Age</label>
             <input type="text" class="form-control" id="exampleInputPassword2" value="{{student.age}}" readonly>
+            <input type="number" class="form-control"  (change)="getAge($event.target.value)" min="1" max="100">
           </div>
           <div class="form-group">
             <label for="exampleInputPassword3">Address</label>

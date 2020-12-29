@@ -11,6 +11,14 @@ import { StudentDetailComponent } from './bai-tap-hang-ngay/student-detail/stude
 import { StudentListComponent } from './bai-tap-hang-ngay/student-list/student-list.component';
 import { NameCardApplicationComponent } from './_05_components_interaction/thuc_hanh/name-card-application/name-card-application.component';
 import { ProgressBarApplicationComponent } from './_05_components_interaction/thuc_hanh/progress-bar-application/progress-bar-application.component';
+import { CountdownTimerComponent } from './_05_components_interaction/bai_tap/countdown-timer/countdown-timer.component';
+import { CountdownTimerAliasComponent } from './_05_components_interaction/bai_tap/countdown-timer-alias/countdown-timer-alias.component';
+import { CountdownTimerEventComponent } from './_05_components_interaction/bai_tap/countdown-timer-event/countdown-timer-event.component';
+import { CountdownTimerEventAliasComponent } from './_05_components_interaction/bai_tap/countdown-timer-event-alias/countdown-timer-event-alias.component';
+import { CountdownTimerGetSetComponent } from './_05_components_interaction/bai_tap/countdown-timer-get-set/countdown-timer-get-set.component';
+import { RatingBarComponent } from './_05_components_interaction/bai_tap/rating-bar/rating-bar.component';
+import {HttpClientModule} from '@angular/common/http';
+import {StudentRoutingModule} from './student-routing.module';
 
 
 @NgModule({
@@ -22,12 +30,20 @@ import { ProgressBarApplicationComponent } from './_05_components_interaction/th
     StudentDetailComponent,
     StudentListComponent,
     NameCardApplicationComponent,
-    ProgressBarApplicationComponent
+    ProgressBarApplicationComponent,
+    CountdownTimerComponent,
+    CountdownTimerAliasComponent,
+    CountdownTimerEventComponent,
+    CountdownTimerEventAliasComponent,
+    CountdownTimerGetSetComponent,
+    RatingBarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    StudentRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
