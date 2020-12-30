@@ -1,6 +1,8 @@
 <div class="container-fluid">
   <h2 style="color: red; text-align: center; font-family: 'Arial Black'">Student list</h2>
-  <button style="margin-bottom: 10px" type="button" class="btn btn-primary">Primary</button>
+  <button style="margin-bottom: 10px" type="button" class="btn btn-primary" data-toggle="modal"
+          data-target="#modalCreate">Create student
+  </button>
   <table class="table table-hover table-striped">
     <thead>
     <tr>
@@ -38,3 +40,5 @@
   </table>
 </div>
 <app-student-detail [student]="students"></app-student-detail>
+<app-student-create [studentCreate]="students"></app-student-create>
+

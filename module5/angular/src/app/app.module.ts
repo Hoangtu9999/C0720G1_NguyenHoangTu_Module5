@@ -19,6 +19,7 @@ import { CountdownTimerGetSetComponent } from './_05_components_interaction/bai_
 import { RatingBarComponent } from './_05_components_interaction/bai_tap/rating-bar/rating-bar.component';
 import {HttpClientModule} from '@angular/common/http';
 import {StudentRoutingModule} from './student-routing.module';
+import { StudentCreateComponent } from './bai-tap-hang-ngay/student-create/student-create.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import {StudentRoutingModule} from './student-routing.module';
     CountdownTimerEventComponent,
     CountdownTimerEventAliasComponent,
     CountdownTimerGetSetComponent,
-    RatingBarComponent
+    RatingBarComponent,
+    StudentCreateComponent
   ],
   imports: [
     BrowserModule,

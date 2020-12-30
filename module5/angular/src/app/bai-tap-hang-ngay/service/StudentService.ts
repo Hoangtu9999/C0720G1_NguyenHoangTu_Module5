@@ -16,8 +16,14 @@ export class StudentService {
   ) {}
 
   private  baseURL = 'http://localhost:3000/studentList';
+  private  createURL = 'http://localhost:3000/students';
+
 
   getAll(): Observable<IStudent[]> {
     return this.http.get<IStudent[]>(this.baseURL).pipe();
+  }
+
+  create(students) {
+      return this.http.post(this.createURL, students);
   }
 }

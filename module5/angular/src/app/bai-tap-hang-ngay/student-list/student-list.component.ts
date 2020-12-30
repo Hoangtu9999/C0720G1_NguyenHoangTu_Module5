@@ -29,7 +29,6 @@ export class StudentListComponent implements OnInit {
   ) {
     this.studentService.getAll().toPromise().then(data => {
       this.studentList = data;
-      console.log(data)
     })
   }
 
@@ -39,4 +38,5 @@ export class StudentListComponent implements OnInit {
   studentDetail(student: IStudent) {
     this.students = student;
   }
+
 }
