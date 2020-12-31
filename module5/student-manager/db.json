@@ -29,8 +29,16 @@
       "name": "Hoang tu 1",
       "age": "12",
       "address": "Quang nam",
+      "mark": 8,
+      "avatar": "https://firebasestorage.googleapis.com/v0/b/student-manager-ad9cb.appspot.com/o/files%2F1609418431819?alt=media&token=69dc34bc-a40b-442d-90f4-52c4d70cfd3c"
+    },
+    {
+      "id": "5",
+      "name": "Hoang tu 1",
+      "age": "12",
+      "address": "Quang nam",
       "mark": 1,
-      "avatar": "C:\\fakepath\\7cc50151b6c5e16808b3c50da230cfa0.JPG"
+      "avatar": "https://firebasestorage.googleapis.com/v0/b/student-manager-ad9cb.appspot.com/o/files%2F1609418867728?alt=media&token=fe17f52b-73ca-438f-a70c-992004b7d5a7"
     }
   ]
 }

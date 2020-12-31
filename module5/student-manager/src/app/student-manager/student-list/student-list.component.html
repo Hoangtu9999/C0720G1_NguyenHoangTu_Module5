@@ -3,16 +3,17 @@
   <button style="margin-bottom: 10px" type="button" class="btn btn-primary" [routerLink]="['/student-create']"
           >Create student
   </button>
-  <table class="table table-hover table-striped">
+  <table class="table table-hover table-striped text-center">
     <thead>
     <tr>
       <th>Id</th>
       <th>Name</th>
       <th>Age</th>
       <th>Address</th>
-      <th>Mark</th>
-      <th>Avatar</th>
+<!--      <th>Mark</th>-->
+<!--      <th>Avatar</th>-->
       <th>Result</th>
+      <th></th>
       <th></th>
       <th></th>
     </tr>
@@ -23,8 +24,8 @@
       <td>{{student.name}}</td>
       <td>{{student.age}}</td>
       <td>{{student.address}}</td>
-      <td>{{student.mark}}</td>
-      <td><img [src]="student.avatar" [style.witch]="'50px'" [style.height]="'100px'"></td>
+<!--      <td>{{student.mark}}</td>-->
+<!--      <td><img [src]="student.avatar" [style.witch]="'50px'" [style.height]="'100px'"></td>-->
       <td>
         <div *ngIf="this.student.mark > 5; else elseBlock" [style.color]="'green'">Pass</div>
         <ng-template #elseBlock>
@@ -33,17 +34,21 @@
       </td>
       <td>
         <button class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter"
-                (click)="studentDetail(student)">Detail
+                (click)="studentDetail(student)"><i class="fas fa-align-justify"></i>
         </button>
       </td>
       <td>
-        <button class="btn btn-warning" [routerLink]="['/student-edit']">Edit
+        <button class="btn btn-warning" [routerLink]="['/student-edit', student.id]"><i class="fas fa-edit"></i>
+        </button>
+      </td>
+      <td>
+        <button class="btn btn-danger" [routerLink]="['/student-delete', student.id]"><i class="far fa-trash-alt"></i>
         </button>
       </td>
     </tr>
     </tbody>
   </table>
 </div>
-<!--<app-student-detail [student]="students"></app-student-detail>-->
+<app-student-detail [student]="students"></app-student-detail>
 <!--<app-student-create></app-student-create>-->
 

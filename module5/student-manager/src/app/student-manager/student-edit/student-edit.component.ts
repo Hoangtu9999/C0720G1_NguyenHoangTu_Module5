@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {IStudent} from '../../model/IStudent';
 import {StudentService} from '../../service/StudentService';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {ActivatedRoute, ParamMap} from '@angular/router';
 
 @Component({
   selector: 'app-student-edit',
@@ -10,13 +11,16 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
   providers: [StudentService]
 })
 export class StudentEditComponent implements OnInit {
-  @Input()
+
   studentEdit: IStudent;
 
   formGroup: FormGroup;
+
   constructor(
-    private studentService: StudentService
-  ) { }
+    private studentService: StudentService,
+    private activatedRoute: ActivatedRoute
+  ) {
+  }
 
   ngOnInit(): void {
     this.formGroup = new FormGroup(
@@ -26,13 +30,19 @@ export class StudentEditComponent implements OnInit {
         age: new FormControl('', [Validators.required]),
         address: new FormControl('', [Validators.required]),
         mark: new FormControl('', [Validators.required]),
-        avatar: new FormControl('', [Validators.required]),
+        // avatar: new FormControl('', [Validators.required]),
       }
     );
-  }
-
-  saveStudent() {
-    this.studentService.create(this.formGroup.value).subscribe(data => {
+    this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
+      this.studentService.getById(paramMap.get('id')).subscribe((data: IStudent) => {
+        this.formGroup.patchValue(data);
+      });
     });
   }
+
+  updateStudent() {
+    this.studentService.update(this.formGroup.value.id,this.formGroup.value).subscribe(data => {
+    });
+  }
+
 }

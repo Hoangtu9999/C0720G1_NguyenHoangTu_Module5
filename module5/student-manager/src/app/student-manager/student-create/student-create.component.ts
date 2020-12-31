@@ -1,9 +1,9 @@
-// @ts-ignore
 import {Component, Input, OnInit} from '@angular/core';
 import {StudentService} from '../../service/StudentService';
 import {IStudent} from '../../model/IStudent';
 import {FormControl, FormGroup, NgForm, Validators} from '@angular/forms';
 import {AngularFireStorage} from '@angular/fire/storage';
+import {finalize} from 'rxjs/operators';
 
 
 @Component({
@@ -15,14 +15,15 @@ import {AngularFireStorage} from '@angular/fire/storage';
 export class StudentCreateComponent implements OnInit {
   @Input()
   studentCreate: IStudent[];
-
-  fileToUpload: File = null;
+  url = '';
+  path: string;
 
   formGroup: FormGroup;
 
   constructor(
     private studentService: StudentService,
-    private storage:  AngularFireStorage) {
+    private storage: AngularFireStorage,
+    ) {
   }
 
   ngOnInit(): void {
@@ -33,28 +34,40 @@ export class StudentCreateComponent implements OnInit {
         age: new FormControl('', [Validators.required]),
         address: new FormControl('', [Validators.required]),
         mark: new FormControl('', [Validators.required]),
-        avatar: new FormControl('', [Validators.required]),
-
+        avatar: new FormControl(''),
       }
     );
   }
 
   saveStudent() {
-    this.studentService.create(this.formGroup.value).subscribe(data => {
-    });
+    const date = new Date();
+    const fileRef = this.storage.ref('files/' + date.getTime());
+    const task = this.storage.upload('files/' + date.getTime() + '', this.path);
+    task
+      .snapshotChanges()
+      .pipe(
+        finalize(() => {
+          fileRef.getDownloadURL().subscribe(url => {
+            if (url) {
+              this.url = url;
+              this.formGroup.controls.avatar.setValue(this.url);
+              this.studentService.create(this.formGroup.value).subscribe(data=> {
+              })
+            }
+
+          });
+        })
+      )
+      .subscribe(url => {
+        if (url) {
+
+        }
+      });
+
   }
 
 
-  onFileSelected(event) {
-    if (event.target.files.length !== 1) {
-      console.error('No file selected');
-    } else {
-      const reader = new FileReader();
-      reader.onloadend = (e) => {
-        // handle data processing
-        console.log(reader.result.toString());
-      };
-      reader.readAsText(event.target.files[0]);
-    }
+  onFileSelected($event) {
+    this.path = $event.target.files[0];
   }
 }
