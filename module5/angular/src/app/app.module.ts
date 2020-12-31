@@ -5,10 +5,8 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {PetComponent} from './_03_angular_overview/thuc_hanh/pet/pet.component';
 import {FontSizeEditorComponent} from './_03_angular_overview/thuc_hanh/font-size-editor/font-size-editor.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HackerNewsComponent } from './_04_angular_component_va_template/thuc_hanh/hacker-news/hacker-news.component';
-import { StudentDetailComponent } from './bai-tap-hang-ngay/student-detail/student-detail.component';
-import { StudentListComponent } from './bai-tap-hang-ngay/student-list/student-list.component';
 import { NameCardApplicationComponent } from './_05_components_interaction/thuc_hanh/name-card-application/name-card-application.component';
 import { ProgressBarApplicationComponent } from './_05_components_interaction/thuc_hanh/progress-bar-application/progress-bar-application.component';
 import { CountdownTimerComponent } from './_05_components_interaction/bai_tap/countdown-timer/countdown-timer.component';
@@ -18,18 +16,19 @@ import { CountdownTimerEventAliasComponent } from './_05_components_interaction/
 import { CountdownTimerGetSetComponent } from './_05_components_interaction/bai_tap/countdown-timer-get-set/countdown-timer-get-set.component';
 import { RatingBarComponent } from './_05_components_interaction/bai_tap/rating-bar/rating-bar.component';
 import {HttpClientModule} from '@angular/common/http';
-import {StudentRoutingModule} from './student-routing.module';
-import { StudentCreateComponent } from './bai-tap-hang-ngay/student-create/student-create.component';
+import { TodoApplicationComponent } from './_06_angular_form/thuc_hanh/todo-application/todo-application.component';
 
 
+
+
+// @ts-ignore
+// @ts-ignore
 @NgModule({
   declarations: [
     AppComponent,
     PetComponent,
     FontSizeEditorComponent,
     HackerNewsComponent,
-    StudentDetailComponent,
-    StudentListComponent,
     NameCardApplicationComponent,
     ProgressBarApplicationComponent,
     CountdownTimerComponent,
@@ -38,14 +37,14 @@ import { StudentCreateComponent } from './bai-tap-hang-ngay/student-create/stude
     CountdownTimerEventAliasComponent,
     CountdownTimerGetSetComponent,
     RatingBarComponent,
-    StudentCreateComponent
+    TodoApplicationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    StudentRoutingModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
