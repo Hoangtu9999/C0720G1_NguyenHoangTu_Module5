@@ -1,0 +1,114 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "name": "Hoàng Tứ",
+      "dateOfBirth": "2019-11-11",
+      "idCard": "Quảng nam",
+      "phoneNumber": "8",
+      "email": "chauquy@gmail.com",
+      "address": "Đà nẵng",
+      "typeCustomer": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Hoàng Tứ1 ",
+      "dateOfBirth": "2020-12-12",
+      "idCard": "Quảng nam",
+      "phoneNumber": "8",
+      "email": "nguyenhoangtu24061999@gmail.com",
+      "address": "Quảng nam",
+      "typeCustomer": "Diamond"
+    },
+    {
+      "id": 3,
+      "name": "Hoang tu 1",
+      "dateOfBirth": "2021-01-03",
+      "idCard": "13",
+      "phoneNumber": "12",
+      "email": "nguyenhoangtu24061999@gmail.com",
+      "address": "Quảng nam",
+      "typeCustomer": "Diamond"
+    },
+    {
+      "id": 4,
+      "name": "Hoang tu 1",
+      "dateOfBirth": "2021-01-02",
+      "idCard": "13",
+      "phoneNumber": "12",
+      "email": "nguyenhoangtu24061999@gmail.com",
+      "address": "Quảng nam",
+      "typeCustomer": "Gold"
+    },
+    {
+      "id": 5,
+      "name": "Hoang tu 1",
+      "dateOfBirth": "2021-01-09",
+      "idCard": "13",
+      "phoneNumber": "12",
+      "email": "nguyenhoangtu24061999@gmail.com",
+      "address": "Quảng nam",
+      "typeCustomer": "Gold"
+    },
+    {
+      "id": 6,
+      "name": "Hoang tu 1",
+      "dateOfBirth": "2021-01-10",
+      "idCard": "13",
+      "phoneNumber": "12",
+      "email": "nguyenhoangtu24061999@gmail.com",
+      "address": "Quảng nam",
+      "typeCustomer": "Diamond"
+    },
+    {
+      "id": 7,
+      "name": "Hoang tu 1",
+      "dateOfBirth": "2021-01-13",
+      "idCard": "13",
+      "phoneNumber": "12",
+      "email": "nguyenhoangtu24061999@gmail.com",
+      "address": "Quảng nam",
+      "typeCustomer": "Gold"
+    },
+    {
+      "id": 8,
+      "name": "Hoang tu 1",
+      "dateOfBirth": "2021-01-02",
+      "idCard": "13",
+      "phoneNumber": "12",
+      "email": "nguyenhoangtu24061999@gmail.com",
+      "address": "Quảng nam",
+      "typeCustomer": "Gold"
+    },
+    {
+      "id": 9,
+      "name": "Hoang tu 3",
+      "dateOfBirth": "2021-01-03",
+      "idCard": "13",
+      "phoneNumber": "12",
+      "email": "nguyenchauquy111201@gmail.com",
+      "address": "Quảng nam",
+      "typeCustomer": "Diamond"
+    },
+    {
+      "id": 10,
+      "name": "Hoàng Tứ",
+      "dateOfBirth": "2021-01-02",
+      "idCard": "13",
+      "phoneNumber": "12",
+      "email": "nguyenhoangtu24061999@gmail.com",
+      "address": "Quảng nam",
+      "typeCustomer": "Diamond"
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Gold"
+    },
+    {
+      "id": 2,
+      "name": "Diamond"
+    }
+  ]
+}

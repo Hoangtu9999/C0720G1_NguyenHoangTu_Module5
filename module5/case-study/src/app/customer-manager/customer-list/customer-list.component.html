@@ -1,0 +1,47 @@
+<div class="container-fluid">
+  <div class="container">
+    <h2 class="list-title">Customer Manager</h2>
+    <button style="margin-bottom: 10px" type="button" class="btn btn-primary" [routerLink]="['/customer-create']"
+    >+ Create customer
+    </button>
+    <table class="table table-striped">
+      <thead class="text-center">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Date of birth</th>
+        <th scope="col">Email</th>
+        <th scope="col">Address </th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let customer of customerList">
+        <th scope="row">{{customer.id}}</th>
+        <td>{{customer.name}}</td>
+        <td>{{customer.dateOfBirth}}</td>
+        <td>{{customer.email}}</td>
+        <td>{{customer.address}}</td>
+        <td>
+          <button class="btn btn-success" data-toggle="modal" data-target="#customerDetail"
+                  [routerLink]="['/customer-detail',customer.id]"
+          ><i class="fas fa-align-justify"></i>
+          </button>
+        </td>
+        <td>
+          <button class="btn btn-warning"><i class="fas fa-edit"></i>
+          </button>
+        </td>
+        <td>
+          <button class="btn btn-danger"><i class="far fa-trash-alt"></i>
+          </button>
+        </td>
+      </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+</div>

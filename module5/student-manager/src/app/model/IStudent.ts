@@ -5,4 +5,5 @@ export interface IStudent {
   address: string;
   mark: number;
   avatar: string;
+
 }
