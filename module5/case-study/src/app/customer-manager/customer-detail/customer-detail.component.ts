@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CustomerService} from '../../service/customer.service';
-import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {ICustomer} from '../../model/ICustomer';
 import {CustomerTypeService} from '../../service/customer-type.service';
@@ -44,11 +44,8 @@ export class CustomerDetailComponent implements OnInit {
     });
 
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
-
       this.customerService.findById(paramMap.get('id')).subscribe((data: ICustomer) => {
         this.formGroup.patchValue(data);
-        // this.formGroup.controls.typeCustomer.setValue(this.idCustomerType);
-        this.customer = data;
       });
     });
   }

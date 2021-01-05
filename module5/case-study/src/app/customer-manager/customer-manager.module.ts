@@ -4,8 +4,11 @@ import { CustomerListComponent } from './customer-list/customer-list.component';
 import {CustomerRoutingModule} from './customer-routing.module';
 import {RouterModule} from '@angular/router';
 import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CustomerCreateComponent } from './customer-create/customer-create.component';
+import { CustomerEditComponent } from './customer-edit/customer-edit.component';
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 
@@ -13,13 +16,17 @@ import { CustomerCreateComponent } from './customer-create/customer-create.compo
   declarations: [
     CustomerListComponent,
     CustomerDetailComponent,
-    CustomerCreateComponent
+    CustomerCreateComponent,
+    CustomerEditComponent
   ],
   imports: [
     CommonModule,
     CustomerRoutingModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Ng2SearchPipeModule,
+    FormsModule,
+    NgxPaginationModule,
   ]
 })
 export class CustomerManagerModule { }

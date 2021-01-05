@@ -2,7 +2,7 @@
   "customers": [
     {
       "id": 1,
-      "name": "Hoàng Tứ",
+      "name": "Hoàng Tứ111121",
       "dateOfBirth": "2019-11-11",
       "idCard": "Quảng nam",
       "phoneNumber": "8",
@@ -81,21 +81,10 @@
       "typeCustomer": "Gold"
     },
     {
-      "id": 9,
-      "name": "Hoang tu 3",
-      "dateOfBirth": "2021-01-03",
-      "idCard": "13",
-      "phoneNumber": "12",
-      "email": "nguyenchauquy111201@gmail.com",
-      "address": "Quảng nam",
-      "typeCustomer": "Diamond"
-    },
-    {
       "id": 10,
-      "name": "Hoàng Tứ",
-      "dateOfBirth": "2021-01-02",
-      "idCard": "13",
-      "phoneNumber": "12",
+      "name": "Đổi thay",
+      "idCard": "123456789",
+      "phoneNumber": "0901234567",
       "email": "nguyenhoangtu24061999@gmail.com",
       "address": "Quảng nam",
       "typeCustomer": "Diamond"

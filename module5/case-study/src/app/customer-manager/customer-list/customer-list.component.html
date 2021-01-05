@@ -1,9 +1,19 @@
 <div class="container-fluid">
   <div class="container">
-    <h2 class="list-title">Customer Manager</h2>
-    <button style="margin-bottom: 10px" type="button" class="btn btn-primary" [routerLink]="['/customer-create']"
-    >+ Create customer
-    </button>
+    <h1 class="list-title">Customer Manager</h1>
+
+    <div class="form-group col-12 row">
+      <div class="col ">
+        <button style="margin-bottom: 10px" type="button" class="btn btn-primary" [routerLink]="['/customer-create']"
+        >+ Create customer
+        </button>
+      </div>
+      <div class="rol">
+        <input type="text" class="form-control"  placeholder="Search" (keyup)="searchKeyWork($event.target.value)" >
+<!--        [(ngModel)]="term"-->
+      </div>
+
+    </div>
     <table class="table table-striped">
       <thead class="text-center">
       <tr>
@@ -18,30 +28,49 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let customer of customerList">
+      <tr *ngFor="let customer of customerList |paginate: { itemsPerPage: 3, currentPage: p}">
+<!--        | filter: term-->
         <th scope="row">{{customer.id}}</th>
         <td>{{customer.name}}</td>
         <td>{{customer.dateOfBirth}}</td>
         <td>{{customer.email}}</td>
         <td>{{customer.address}}</td>
         <td>
-          <button class="btn btn-success" data-toggle="modal" data-target="#customerDetail"
-                  [routerLink]="['/customer-detail',customer.id]"
-          ><i class="fas fa-align-justify"></i>
+          <button class="btn btn-success"
+                  [routerLink]="['/customer-detail',customer.id]"><i class="fas fa-align-justify"></i>
           </button>
         </td>
         <td>
-          <button class="btn btn-warning"><i class="fas fa-edit"></i>
+          <button class="btn btn-warning"
+                  [routerLink]="['/customer-edit',customer.id]"><i class="fas fa-edit"></i>
           </button>
         </td>
         <td>
-          <button class="btn btn-danger"><i class="far fa-trash-alt"></i>
+          <button class="btn btn-danger"
+                  data-toggle="modal" data-target="#modalDelete"
+                            (click)="getId(customer.id)"
+          ><i class="far fa-trash-alt"></i>
           </button>
         </td>
       </tr>
 
       </tbody>
     </table>
-
+    <pagination-controls (pageChange)="p = $event" style="margin-left: 55%"></pagination-controls>
   </div>
 </div>
+<!-- Modal -->
+<div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body" id="modalDeleteCustomerContent">
+        Are you sure want to {{customerId}} delete customer ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="delete()">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+

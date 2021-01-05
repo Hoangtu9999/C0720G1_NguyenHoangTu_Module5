@@ -4,16 +4,26 @@
     <form [formGroup]="formGroup" (ngSubmit)="saveCustomer()">
       <div class="row">
         <div class="form-group col">
-          <label for="exampleInputEmail1">Name</label>
+          <label for="name">Name</label>
           <input
             formControlName="name"
-            type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            type="text" class="form-control" id="name">
+          <div *ngFor="let validation of validation_messages.name">
+            <div class="error-message"
+                 *ngIf="formGroup.get('name').hasError(validation.type) && (formGroup.get('name').dirty || formGroup.get('name').touched)">
+              {{validation.message}}</div>
+          </div>
         </div>
         <div class="form-group col">
           <label for="exampleInputPassword2">Date of birth</label>
           <input
             formControlName="dateOfBirth"
             type="date" class="form-control" id="exampleInputPassword2">
+          <div *ngFor="let validation of validation_messages.dateOfBirth">
+            <div class="error-message"
+                 *ngIf="formGroup.get('dateOfBirth').hasError(validation.type) && (formGroup.get('dateOfBirth').dirty || formGroup.get('dateOfBirth').touched)">
+              {{validation.message}}</div>
+          </div>
         </div>
       </div>
 
@@ -23,12 +33,22 @@
           <input
             formControlName="idCard"
             type="text" class="form-control" id="idCard">
+          <div *ngFor="let validation of validation_messages.idCard">
+            <div class="error-message"
+                 *ngIf="formGroup.get('idCard').hasError(validation.type) && (formGroup.get('idCard').dirty || formGroup.get('idCard').touched)">
+              {{validation.message}}</div>
+          </div>
         </div>
         <div class="form-group col">
           <label for="phoneNumber">Phone number</label>
           <input
             formControlName="phoneNumber"
             type="text" class="form-control" id="phoneNumber">
+          <div *ngFor="let validation of validation_messages.phoneNumber">
+            <div class="error-message"
+                 *ngIf="formGroup.get('phoneNumber').hasError(validation.type) && (formGroup.get('phoneNumber').dirty || formGroup.get('phoneNumber').touched)">
+              {{validation.message}}</div>
+          </div>
         </div>
       </div>
       <div class="row">
@@ -37,26 +57,38 @@
           <input
             formControlName="email"
             type="text" class="form-control" id="email">
+          <div *ngFor="let validation of validation_messages.email">
+            <div class="error-message"
+                 *ngIf="formGroup.get('email').hasError(validation.type) && (formGroup.get('email').dirty || formGroup.get('email').touched)">
+              {{validation.message}}</div>
+          </div>
         </div>
         <div class="form-group col">
           <label for="email">Address</label>
           <input
             formControlName="address"
             type="text" class="form-control" id="address">
+          <div *ngFor="let validation of validation_messages.address">
+            <div class="error-message"
+                 *ngIf="formGroup.get('address').hasError(validation.type) && (formGroup.get('address').dirty || formGroup.get('address').touched)">
+              {{validation.message}}</div>
+          </div>
         </div>
       </div>
 
-      <div class="address">
+      <div class="form-group">
         <label for="typeCustomer">Customer type</label>
         <select
           formControlName="typeCustomer"
           type="text" class="form-control" id="typeCustomer">
-          <option *ngFor="let customerType of customerTypeList" [ngValue]="customerType.name">{{customerType.name}}</option>
+          <option *ngFor="let customerType of customerTypeList"
+                  [ngValue]="customerType.name">{{customerType.name}}</option>
         </select>
-      </div><br>
+      </div>
+      <br>
       <div class="text-center ">
         <button type="button" class="btn btn-secondary" [routerLink]="['/customer-list']">Close</button>&nbsp;
-        <button type="submit" class="btn btn-success" >Save</button>
+        <button type="submit" class="btn btn-success">Save</button>
 
       </div>
     </form>
